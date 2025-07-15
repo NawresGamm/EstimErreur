@@ -3,7 +3,7 @@
 #include <cmath>
 #include <functional>
 
-// Exemple de noyau gaussien avec erreur de mesure
+// Exemple de noyau gaussien avec erreur de mesure 
 // Kn(u, sigma_u, h) = N(0, 1 + sigma_u^2 / h^2)
 double gaussian_noise_kernel(double u, double sigma_u, double h) {
     double total_variance = 1.0 + (sigma_u * sigma_u) / (h * h);
@@ -11,7 +11,7 @@ double gaussian_noise_kernel(double u, double sigma_u, double h) {
     return std::exp(exponent) / std::sqrt(2 * M_PI * total_variance);
 }
 
-// Estimateur de Nadaraya-Watson avec noyau bruité
+// Estimateur de Nadaraya-Watson avec noyau bruitÃ©
 template<typename KernelWithNoise>
 double mhat_NW(
     double x,
@@ -37,6 +37,7 @@ double mhat_NW(
     return std::isnan(ans) ? 0.0 : ans;
 }
 
+// la fonction main pour tester avec des donnees 
 int main() {
     std::vector<double> W = {1.0, 2.0, 3.0, 4.0};
     std::vector<double> Y = {2.1, 2.9, 4.2, 5.0};
